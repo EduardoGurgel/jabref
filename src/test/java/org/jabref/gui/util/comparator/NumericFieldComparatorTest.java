@@ -62,4 +62,40 @@ public class NumericFieldComparatorTest {
     public void compareWordWithMinus() {
         assertEquals(-1, comparator.compare("-abc", "-5"));
     }
+    @Test
+    public void compareTwoInputsWithFirstNullAndSeven() { // Teste1 Eduardo null e 7
+        assertEquals(-1, comparator.compare(null, "7"));
+    }
+
+    @Test
+    public void compareNullInputs() { // Teste2 Eduardo
+        assertEquals(0, comparator.compare(null, null));
+    }
+
+    @Test
+    public void compareTwoInputsWithFirstSevenAndNull() { // Teste3 Eduardo 7 e null
+        assertEquals(-1, comparator.compare("7", null));
+    }
+
+    @Test
+    public void compareTwoInputsWithFirstTextoAndTwo() { // Teste4 Eduardo texto e null
+        assertEquals(-1, comparator.compare("texto", null));
+    }
+
+    @Test
+    public void compareTwoInputsWithFirstEightAndOi() { // Teste5 Eduardo oito e oi
+        assertEquals(-1, comparator.compare("8", "oi"));
+    }
+
+    @Test
+    public void compareTwoInputsWithFirstNegativeEightAndFive() { // Teste6 Eduardo -8 e -5
+        assertEquals(-1, comparator.compare("-8", "-5"));
+    }
+
+    @Test
+    public void compareTwoInputsWithNegativeTextAndTen() { // Teste7 Eduardo -texto e -10
+        assertEquals(-1, comparator.compare("-texto", "-10"));
+    }
+
 }
+
